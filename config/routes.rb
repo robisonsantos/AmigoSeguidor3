@@ -1,8 +1,8 @@
 Amigoseguidor3::Application.routes.draw do
   resources :users, :user_sessions
+  resources :password_resets, :only => [ :create, :update ]
 	match 'reset_pass' => 'password_resets#new', :as => :reset_pass
   match 'update_pass' => 'password_resets#edit', :as => :update_pass
-  #resources :password_resets, :only => [ :new, :create, :edit, :update ]
 	match 'login' => 'user_sessions#new', :as => :login
 	match 'logout' => 'user_sessions#destroy', :as => :logout 	
   root :to => "user_sessions#new"
