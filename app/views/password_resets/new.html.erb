@@ -1,5 +1,5 @@
 <h1>Reset Password</h1>
-
+<p style="color: red" id="error"><%= alert %></p>
 <p>Please enter your email address below and then press "Reset Password".</p>
 
 <% form_tag :controller=>"password_resets", :action=>"create" do %>
